@@ -1,0 +1,23 @@
+import os
+
+class Config:
+
+    def __init__(self):
+        self.mysqldb_host = os.getenv("MYSQLDB_HOST")
+        self.mysqldb_username = os.getenv("MYSQLDB_USERNAME")
+        self.mysqldb_password = os.getenv("MYSQLDB_PASSWORD")
+        self.mysqldb_name = os.getenv("MYSQLDB_NAME")
+        self.mysqldb_port = os.getenv("MYSQLDB_PORT")
+
+
+    
+    def get_connectiondb(self):
+        return  {
+            "host": self.mysqldb_host,
+            "name": self.mysqldb_name,
+            "password": self.mysqldb_password,
+            "username": self.mysqldb_username,
+            "port":self.mysqldb_port
+        }
+
+    
