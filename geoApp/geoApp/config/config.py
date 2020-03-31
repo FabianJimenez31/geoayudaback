@@ -8,6 +8,7 @@ class Config:
         self.mysqldb_password = os.getenv("MYSQLDB_PASSWORD")
         self.mysqldb_name = os.getenv("MYSQLDB_NAME")
         self.mysqldb_port = os.getenv("MYSQLDB_PORT")
+        self.secret_key = os.getenv("SECRET_KEY")
 
 
     
@@ -19,5 +20,8 @@ class Config:
             "username": self.mysqldb_username,
             "port":self.mysqldb_port
         }
+
+    def get_secret_key(self):
+        return self.secret_key
 
     
