@@ -42,4 +42,5 @@ url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls'))
 ]+urlpatterns_swagger
