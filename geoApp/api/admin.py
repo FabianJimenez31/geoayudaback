@@ -7,7 +7,8 @@ from .models import (
     nivel_apoyo,
     poblacion,
     iniciativa,
-    entidad
+    entidad,
+    sector
 
 
 
@@ -20,6 +21,7 @@ admin.site.register(tipo_entidad)
 admin.site.register(tipo_poblacion)
 admin.site.register(tipo_iniciativa)
 admin.site.register(fase_inicitiva)
+admin.site.register(sector)
 admin.site.register(nivel_apoyo)
 admin.site.register(poblacion)
 admin.site.register(iniciativa)
