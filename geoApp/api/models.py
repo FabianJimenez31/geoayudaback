@@ -4,22 +4,39 @@ from django.db import models
 
 class tipo_entidad(models.Model):
     nombre = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.nombre
 
 class tipo_poblacion(models.Model):
     nombre = models.CharField(max_length=200)
+    def __str__(self):
+        return self.nombre
 
 class tipo_iniciativa(models.Model):
     nombre = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.nombre
+
 class fase_inicitiva(models.Model):
     nombre = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.nombre
 
 class nivel_apoyo(models.Model):
     nombre = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.nombre
+
 class poblacion(models.Model):
     nombre = models.CharField(max_length=200)
     descripcion = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.nombre
 
 class iniciativa(models.Model):
     fase = models.ForeignKey(fase_inicitiva, on_delete=models.CASCADE)
