@@ -39,12 +39,17 @@ class poblacion(models.Model):
     def __str__(self):
         return self.nombre
 
+class sector(models.Model):
+    nombre = models.CharField(max_length=200)
+
+
 class iniciativa(models.Model):
     fase = models.ForeignKey(fase_inicitiva, on_delete=models.CASCADE)
     nivel_apoyo = models.ForeignKey(nivel_apoyo, on_delete=models.CASCADE)
     tipo = models.ForeignKey(tipo_iniciativa, on_delete = models.CASCADE)
     poblacion = models.ForeignKey(poblacion, on_delete = models.CASCADE)
     entidad = models.ForeignKey('entidad', on_delete = models.CASCADE)
+    sector = models.ForeignKey(sector, on_delete = models.CASCADE)
     poblacion_estimada = models.IntegerField()
     direccion =  models.CharField(max_length=200)
     latitud = models.FloatField()
