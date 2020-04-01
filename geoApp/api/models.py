@@ -34,6 +34,7 @@ class nivel_apoyo(models.Model):
 class poblacion(models.Model):
     nombre = models.CharField(max_length=200)
     descripcion = models.CharField(max_length=200)
+    vulnerable = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nombre
@@ -44,6 +45,7 @@ class iniciativa(models.Model):
     tipo = models.ForeignKey(tipo_iniciativa, on_delete = models.CASCADE)
     poblacion = models.ForeignKey(poblacion, on_delete = models.CASCADE)
     entidad = models.ForeignKey('entidad', on_delete = models.CASCADE)
+    poblacion_estimada = models.IntegerField()
 
 class entidad(models.Model):
     nombre =  models.CharField(max_length=200)
