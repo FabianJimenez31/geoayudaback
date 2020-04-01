@@ -40,7 +40,7 @@ class poblacion(models.Model):
 
 class iniciativa(models.Model):
     fase = models.ForeignKey(fase_inicitiva, on_delete=models.CASCADE)
-    apoyo = models.ForeignKey(nivel_apoyo, on_delete=models.CASCADE)
+    nivel_apoyo = models.ForeignKey(nivel_apoyo, on_delete=models.CASCADE)
     tipo = models.ForeignKey(tipo_iniciativa, on_delete = models.CASCADE)
     poblacion = models.ForeignKey(poblacion, on_delete = models.CASCADE)
     entidad = models.ForeignKey('entidad', on_delete = models.CASCADE)
