@@ -46,10 +46,11 @@ class iniciativa(models.Model):
     poblacion = models.ForeignKey(poblacion, on_delete = models.CASCADE)
     entidad = models.ForeignKey('entidad', on_delete = models.CASCADE)
     poblacion_estimada = models.IntegerField()
+    direccion =  models.CharField(max_length=200)
+    latitud = models.FloatField()
+    longitud = models.FloatField()
 
 class entidad(models.Model):
     nombre =  models.CharField(max_length=200)
-    dirección =  models.CharField(max_length=200)
+    direccion =  models.CharField(max_length=200)
     tipo = models.ForeignKey(tipo_entidad, on_delete=models.CASCADE)
-    latitud = models.FloatField()
-    longitud = models.FloatField()
