@@ -8,15 +8,15 @@ from .models import (
     poblacion,
     iniciativa,
     entidad,
-    sector
-
-
-
+    sector,
+    Ciudad,
+    Departamento
     )
 
 
 # Register your models here.
-
+admin.site.register(Departamento)
+admin.site.register(Ciudad)
 admin.site.register(tipo_entidad)
 admin.site.register(tipo_poblacion)
 admin.site.register(tipo_iniciativa)
