@@ -44,6 +44,13 @@ class sector(models.Model):
     def __str__(self):
         return self.nombre
 
+class Departamento(models.Model):
+    nombre = models.CharField(max_length=255)
+
+class Ciudad(models.Model):
+    nombre = models.CharField(max_length=255)
+    departamento = models.ForeignKey(Departamento,on_delete=models.CASCADE)
+
 
 class iniciativa(models.Model):
     fase = models.ForeignKey(fase_inicitiva, on_delete=models.CASCADE)
@@ -54,6 +61,8 @@ class iniciativa(models.Model):
     sector = models.ForeignKey(sector, on_delete = models.CASCADE)
     poblacion_estimada = models.IntegerField()
     direccion =  models.CharField(max_length=200)
+    url = models.TextField(null=True)
+    ciudad = models.ForeignKey(Ciudad, on_delete = models.CASCADE)
     latitud = models.FloatField()
     longitud = models.FloatField()
 
