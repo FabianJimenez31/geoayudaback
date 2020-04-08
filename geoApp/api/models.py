@@ -47,9 +47,15 @@ class sector(models.Model):
 class Departamento(models.Model):
     nombre = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.nombre
+
 class Ciudad(models.Model):
     nombre = models.CharField(max_length=255)
     departamento = models.ForeignKey(Departamento,on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.nombre
 
 
 class iniciativa(models.Model):
