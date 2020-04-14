@@ -71,6 +71,9 @@ class iniciativa(models.Model):
     ciudad = models.ForeignKey(Ciudad, on_delete = models.CASCADE)
     latitud = models.FloatField()
     longitud = models.FloatField()
+    nombre = models.TextField(null=True)
+    descripcion = models.TextField(null=True)
+    link_image = models.TextField(null=True)
 
 class entidad(models.Model):
     nombre =  models.CharField(max_length=200)
