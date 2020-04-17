@@ -75,7 +75,9 @@ class IniciativaSerializer(serializers.ModelSerializer):
     class Meta:
         model = iniciativa
         fields = (
-            'id', 
+            'id',
+	    'nombre',
+ 	    'descripcion', 
             'poblacion_estimada', 
             'direccion',
             'url',
