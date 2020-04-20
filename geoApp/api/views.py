@@ -64,8 +64,26 @@ class CiudadesByDepartment(APIView):
         serializer = CiudadSerializer(ciudades ,many=True)
         return Response(serializer.data)
 
-# Get list of available initiatives by city
 
+
+
+
+
+class Iniciativas(APIView):
+    parser_classes = (JSONParser,)
+
+    @swagger_auto_schema(
+        reponses={200:openapi.Response('Iniciativas',IniciativaSerializer)},
+    )
+
+    def get(self, request, format=None):
+        ciudades = iniciativa.objects.all()
+        serializer = IniciativaSerializer(ciudades ,many=True)
+        return Response(serializer.data)
+
+
+
+# Get list of available initiatives by city
 class IniciativasByCiudad(APIView):
     parser_classes = (JSONParser,)
 

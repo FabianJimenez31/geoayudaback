@@ -11,6 +11,8 @@ urlpatterns = [
     path('ciudades/<departamento_id>',views.CiudadesByDepartment.as_view()),
     # Return Initiatives by department - POST - Department
     path('iniciativas/<ciudad_id>/',views.IniciativasByCiudad.as_view()),
+    # Return all Inititives
+    path('iniciativas/',views.Iniciativas.as_view()),
     # Return Initiatives by type
     path('iniciativa/<tipo_iniciativa>/',views.EntidadList.as_view())  
 ]
