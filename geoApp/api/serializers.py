@@ -71,6 +71,7 @@ class IniciativaSerializer(serializers.ModelSerializer):
     entidad = EntidadSerializer(read_only=True)
     sector = SectorSerializer(read_only=True)
     ciudad = CiudadSerializer(read_only=True)
+    poblacion = PoblacionSerializer(read_only=True)
 
     class Meta:
         model = iniciativa
@@ -88,5 +89,6 @@ class IniciativaSerializer(serializers.ModelSerializer):
             'tipo',
             'entidad',
             'sector',
-            'ciudad'
+            'ciudad',
+            'poblacion'
              )
