@@ -73,9 +73,9 @@ class Iniciativas(APIView):
     parser_classes = (JSONParser,)
 
     @swagger_auto_schema(
-        reponses={200:openapi.Response('Iniciativas',IniciativaSerializer)},
+        responses={200:openapi.Response('Iniciativa',IniciativaSerializer)},
+        tags=['Iniciativa']
     )
-
     def get(self, request, format=None):
         ciudades = iniciativa.objects.all()
         serializer = IniciativaSerializer(ciudades ,many=True)
